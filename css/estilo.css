@@ -1,0 +1,12 @@
+.sol {
+    max-width:200px;
+    max-height:150px;
+    width: auto;
+    height: auto;
+}
+.txtlogo{
+  margin-top: 20px;
+  font-family: Snell Roundhand, cursive;
+  font-size: 30px;
+  color: white;
+}

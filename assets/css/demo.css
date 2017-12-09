@@ -493,3 +493,12 @@
         display: none !important;
     }
 }
+
+.cartao{
+  color: black;
+}
+
+.conteudo{
+  display: flex;
+  justify-content: space-between;
+}

@@ -41,12 +41,15 @@ public class Cadastrar extends HttpServlet {
             throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
+        String confirmSenha = request.getParameter("confirm");
         String email = request.getParameter("email");
+        String cpf = request.getParameter("cpf");
         
-        Usuario user = new Usuario();
-        user.setNome(nome);
-        user.setEmail(email);
-        user.setSenha(senha);
+        if(checkParams(nome, senha, confirmSenha, email, cpf) != null) {
+            return;
+        }
+        
+        Usuario user = new Usuario(nome, email, cpf, senha);
         
         Config config = Config.getInstance();
         Session session = config.getSession();
@@ -68,5 +71,20 @@ public class Cadastrar extends HttpServlet {
             out.println("</body>");
             out.println("</html>");
         }
+    }
+    
+    private String checkParams(String nome, String senha, String confirmSenha, 
+            String email, String cpf) {
+        if(nome == null || senha == null || email == null || cpf == null) {
+            return "Por favor, preencha todos os campos";
+        }
+        if(senha.length() < 5) {
+            return "A senha deve ter pelo menos 5 caracteres";
+        }
+        if(!senha.equals(confirmSenha)) {
+            return "As senhas devem coincidir";
+        }
+        
+        return null;
     }
 }

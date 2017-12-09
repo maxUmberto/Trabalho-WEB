@@ -18,6 +18,19 @@ public class Usuario implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private BigInteger id;
+    private String email;
+    private String senha;
+    private String cpf;
+    private String nome;
+    
+    public Usuario() {}
+    
+    public Usuario(String nome, String email, String cpf, String senha) { 
+        this.nome = nome;
+        this.email = email;
+        this.senha = senha;
+        this.cpf = cpf;
+    }
 
     public String getEmail() {
         return email;
@@ -43,11 +56,6 @@ public class Usuario implements Serializable {
         this.nome = nome;
     }
     
-    private String email;
-    private String senha;
-    private String nome;
-    
-
     public BigInteger getId() {
         return id;
     }
@@ -55,6 +63,18 @@ public class Usuario implements Serializable {
     public void setId(BigInteger id) {
         this.id = id;
     }
+    
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    
+
+
 
     @Override
     public int hashCode() {

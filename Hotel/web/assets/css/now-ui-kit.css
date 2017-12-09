@@ -6018,13 +6018,13 @@ Created using IcoMoon - icomoon.io
     .sidebar-collapse .navbar-collapse:before {
         background: #941925;
         /* For browsers that do not support gradients */
-        background: -webkit-linear-gradient(##941925 0%, #000 80%);
+        background: -webkit-linear-gradient(#941925 0%, #000 80%);
         /* For Safari 5.1 to 6.0 */
-        background: -o-linear-gradient(##941925 0%, #000 80%);
+        background: -o-linear-gradient(#941925 0%, #000 80%);
         /* For Opera 11.1 to 12.0 */
-        background: -moz-linear-gradient(##941925 0%, #000 80%);
+        background: -moz-linear-gradient(#941925 0%, #000 80%);
         /* For Firefox 3.6 to 15 */
-        background: linear-gradient(##941925 0%, #000 80%);
+        background: linear-gradient(#941925 0%, #000 80%);
         /* Standard syntax (must be last) */
         opacity: 0.76;
         filter: alpha(opacity=76);

@@ -5316,27 +5316,12 @@ button.close {
     transform: translateX(0)
 }
 
-@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
-    .carousel-item-next.carousel-item-left,
-    .carousel-item-prev.carousel-item-right {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0)
-    }
-}
-
 .active.carousel-item-right,
 .carousel-item-next {
     -webkit-transform: translateX(100%);
     transform: translateX(100%)
 }
 
-@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
-    .active.carousel-item-right,
-    .carousel-item-next {
-        -webkit-transform: translate3d(100%, 0, 0);
-        transform: translate3d(100%, 0, 0)
-    }
-}
 
 .active.carousel-item-left,
 .carousel-item-prev {
@@ -5344,13 +5329,6 @@ button.close {
     transform: translateX(-100%)
 }
 
-@supports ((-webkit-transform-style:preserve-3d) or (transform-style:preserve-3d)) {
-    .active.carousel-item-left,
-    .carousel-item-prev {
-        -webkit-transform: translate3d(-100%, 0, 0);
-        transform: translate3d(-100%, 0, 0)
-    }
-}
 
 .carousel-control-next,
 .carousel-control-prev {
@@ -6594,15 +6572,6 @@ a.bg-dark:hover {
     bottom: 0;
     left: 0;
     z-index: 1030
-}
-
-@supports ((position:-webkit-sticky) or (position:sticky)) {
-    .sticky-top {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 0;
-        z-index: 1020
-    }
 }
 
 .sr-only {

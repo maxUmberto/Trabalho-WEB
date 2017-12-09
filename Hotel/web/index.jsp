@@ -181,7 +181,7 @@
               </div>
             </div>
             <div class="col text-center">
-                <a href="cadastro.html" class="btn btn-neutral btn-round btn-lg">Cadastre-se</a>
+                <a href="Cadastrar.jsp" class="btn btn-neutral btn-round btn-lg">Cadastre-se</a>
             </div>
           </div>
         </div>

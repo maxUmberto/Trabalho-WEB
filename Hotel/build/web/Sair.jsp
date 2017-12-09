@@ -9,7 +9,8 @@
         <%
             session.removeAttribute("user");
             session.invalidate();
+            
         %>
-        <h1>Usuário deslogado com sucesso. <a href="index.html">Voltar ao inicio</a></h1>
+        <h1>Usuário deslogado com sucesso. <a href="index.jsp">Voltar ao inicio</a></h1>
     </body>
 </html>

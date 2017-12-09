@@ -31,22 +31,11 @@ public class Login extends HttpServlet {
                 + "WHERE email='"+email+"' AND senha='"+senha+"'");
         query.setResultTransformer(Transformers.aliasToBean(Usuario.class));
         Usuario user = (Usuario) query.uniqueResult();
+        tx.commit();
+        
         if(user != null) {
             request.getSession().setAttribute("user", user);
         }
-        tx.commit();
-        
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Cadastrar</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Olá, "+user.getNome()+"</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        response.sendRedirect("index.jsp");
     }
 }

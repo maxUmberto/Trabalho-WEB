@@ -60,6 +60,13 @@
     <div class="page-header" filter-color="orange">
         <div class="page-header-image" style="background-image:url(assets/img/praia2.jpg)"></div>
         <div class="container">
+            <%
+                if(session.getAttribute("error") != null) { %>
+                    <p class="alert alert-danger"><%=session.getAttribute("error")%></p>
+            <%
+                session.removeAttribute("error");
+               }
+            %>
             <div class="col-md-4 content-center">
                 <div class="card card-login card-plain">
                     <form class="form" method="POST" action="Cadastrar">
@@ -91,13 +98,13 @@
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons objects_key-25"></i>
                                 </span>
-                                <input type="text" name="senha" placeholder="Senha" class="form-control" />
+                                <input type="password" name="senha" placeholder="Senha" class="form-control" />
                             </div>
                             <div class="input-group form-group-no-border input-lg">
                                 <span class="input-group-addon">
                                     <i class="now-ui-icons objects_key-25"></i>
                                 </span>
-                                <input type="text" name="confirmSenha" placeholder="Confirmação de senha" class="form-control" />
+                                <input type="password" name="confirmSenha" placeholder="Confirmação de senha" class="form-control" />
                             </div>
                         </div>
                         <div class="footer text-center">

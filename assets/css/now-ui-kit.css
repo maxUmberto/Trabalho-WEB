@@ -1591,7 +1591,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-    background-color: #f96332;
+    background-color: #941925;
     color: #FFFFFF;
 }
 
@@ -1606,7 +1606,7 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .show>.btn-primary.dropdown-toggle,
 .show>.btn-primary.dropdown-toggle:focus,
 .show>.btn-primary.dropdown-toggle:hover {
-    background-color: #fa7a50;
+    background-color: #c64350;
     color: #FFFFFF;
     box-shadow: none;
 }
@@ -5349,7 +5349,7 @@ Created using IcoMoon - icomoon.io
 .login-page .card-login {
     border-radius: 0.25rem;
     padding-bottom: 0.7rem;
-    max-width: 320px;
+    max-width: 400px;
 }
 
 .login-page .card-login .btn-wd {

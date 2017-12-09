@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -41,11 +42,14 @@ public class Cadastrar extends HttpServlet {
             throws ServletException, IOException {
         String nome = request.getParameter("nome");
         String senha = request.getParameter("senha");
-        String confirmSenha = request.getParameter("confirm");
+        String confirmSenha = request.getParameter("confirmSenha");
         String email = request.getParameter("email");
         String cpf = request.getParameter("cpf");
         
-        if(checkParams(nome, senha, confirmSenha, email, cpf) != null) {
+        String error = checkParams(nome, senha, confirmSenha, email, cpf);
+        if(error != null) {
+            request.getSession().setAttribute("error", error);
+            response.sendRedirect("Cadastrar.jsp");
             return;
         }
         
@@ -56,26 +60,12 @@ public class Cadastrar extends HttpServlet {
         Transaction tx = session.beginTransaction();
         session.save(user);
         tx.commit();
-        //session.close();
-        //response.sendRedirect("http://google.com");
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            // TODO output your page here. You may use following sample code. 
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet Cadastrar</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Olá, "+nome+"</h1>");
-            out.println("</body>");
-            out.println("</html>");
-        }
+        response.sendRedirect("index.jsp");
     }
     
     private String checkParams(String nome, String senha, String confirmSenha, 
             String email, String cpf) {
-        if(nome == null || senha == null || email == null || cpf == null) {
+        if(nome == "" || senha == "" || email == "" || cpf == "" || confirmSenha == "") {
             return "Por favor, preencha todos os campos";
         }
         if(senha.length() < 5) {
@@ -84,6 +74,15 @@ public class Cadastrar extends HttpServlet {
         if(!senha.equals(confirmSenha)) {
             return "As senhas devem coincidir";
         }
+        
+        Config config = Config.getInstance();
+        Session session = config.getSession();
+        Transaction tx = session.beginTransaction();
+        SQLQuery query = session.createSQLQuery("SELECT * FROM Usuario "
+                + "WHERE email='"+email+"'");
+        if(query.list().size() > 0)
+            return "Email já cadastrado no sistema";
+        session.close();
         
         return null;
     }

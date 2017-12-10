@@ -36,8 +36,14 @@
             <ul class="navbar-nav">
               <li class="nav-item">
                 <a class="nav-link" href="" onclick="scrollToLogin()">
-                  <i class="fa fa-user-o" aria-hidden="true"></i>
-                  <p>Realizar reserva</p>
+                  <i class="now-ui-icons ui-1_check" aria-hidden="true"></i>
+                  <p>Realizar Reserva</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#cancelar" onclick="scrollToLogin()">
+                  <i class="now-ui-icons ui-1_simple-remove" aria-hidden="true"></i>
+                  <p>Cancelar Reserva</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -55,51 +61,128 @@
         <div class="page-header-image" style="background-image:url(assets/img/curtir1.jpg)"></div>
         <div class="container">
             <div class="col-md-4 content-center">
-              <div class="text-left"><h4>Olá, Fulano!</h4></div>
-                <div class="card card-login card-plain">
-                    <form class="form" method="" action="">
-                        <div class="content">
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons shopping_credit-card"></i>
-                                </span>
-                                <input type="text" class="form-control" placeholder="Número do cartão">
+              <div class="text-left"><h2 class="title">Olá, Fulano!</h2>
+              <h5>Bem vindo a sua página pessoal em nosso site.</h5>
+              <h5>Aqui você pode obter maiores informações sobre o hotel, realizar reservas, entrar em contato direto pelo email especial de clientes, acesso a promoções exclusivas e participar do nosso clube de benefícios ganhando pontos de fidelidade.</h5>
+              </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="wrapper">
+        <div class="section section-about-us">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 ml-auto mr-auto text-center">
+                        <h2 class="title">Faça uma reserva já!</h2>
+                        <h5 class="description">Venha fazer parte do seleto grupo de pessoas que já tiveram a experiência de se hospedar no Hotel Mira-Sol.</h5>
+                        <a href="#button" class="btn btn-primary btn-round btn-lg"><i class="now-ui-icons ui-1_check" aria-hidden="true"></i> Realizar Reserva</a>
+                    </div>
+                </div>
+                <div class="separator separator-primary"></div>
+                <div class="section-story-overview">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="image-container image-left" style="background-image: url('assets/img/feliz1.jpg')">
+                                <!-- First image on the left side -->
+                                <p class="blockquote blockquote-primary">"Experiência incrível, pois além da ótima infraestrutura e do excelente serviço prestado, a beleza natural é inexplicável. Com certeza, em breve, voltarei!"
+                                    <br>
+                                    <br>
+                                    <small>-Felipe Santos</small>
+                                    <br>Cliente
+                                </p>
                             </div>
-                            <div class="input-group form-group-no-border input-lg">
-                              <span class="input-group-addon">
-                                  <i class="now-ui-icons ui-1_calendar-60"></i>
-                              </span>
-                              <input type="text" placeholder="mm/aa" class="form-control" />
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                              <span class="input-group-addon">
-                                  <i class="now-ui-icons ui-1_lock-circle-open"></i>
-                              </span>
-                              <input type="text" placeholder="cvv" class="form-control" />
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                              <span class="input-group-addon">
-                                <i class="now-ui-icons users_circle-08"></i>
-                              </span>
-                              <input type="text" class="form-control" placeholder="Nome do titular do cartão">
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons business_badge"></i>
-                                </span>
-                                <input type="text" placeholder="CPF" class="form-control" />
-                            </div>
-                            <div class="input-group form-group-no-border input-lg">
-                                <span class="input-group-addon">
-                                    <i class="now-ui-icons tech_mobile"></i>
-                                </span>
-                                <input type="tel" placeholder="XX XXXXX XXXX" class="form-control" />
+                            <!-- Second image on the left side of the article -->
+                            <div class="image-container" style="background-image: url('assets/img/feliz2.jpg')"></div>
+                        </div>
+                        <div class="col-md-5">
+                            <!-- First image on the right side, above the article -->
+                            <div class="image-container image-right" style="background-image: url('assets/img/feliz3.jpg')"></div>
+                            <h3>Clube de Benefícios</h3>
+                            <p>Quanto mais reservas você fizer, mais pontos você ganha. Esses pontos podem ser trocados por produtos em nossas lojas a até uma férias com tudo pago.</p>
+                            <p>- 100 pontos por reserva diária.</p>
+                            <p>- 60 pontos por passeios feitos conosco.</p>
+                            <p>- 30 pontos por compras acima de R$100,00 em nossas lojas.</p>
+                            <p>- 5 pontos por interação em nossas mídias sociais.</p>
+                            <p>Seus Pontos podem ser trocados no momento que você atingir um dos níveis de pontuação:</p>
+                            <p>- 1000 pontos = R$100,00 em compras em nossas lojas</p>
+                            <p>- 5000 pontos = R$1000,00 em compras em nossas lojas</p>
+                            <p>- 10000 pontos = R$3000,00 em compras em nossas lojas</p>
+                            <p>- 50000 pontos = Uma férias com tudo pago*</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section section-team text-center">
+            <div class="container">
+                <h2 class="title">Promoções do Mês</h2>
+                <div class="team">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <img src="assets/img/miniquarto2.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                <h4 class="title">Quarto Individual</h4>
+                                <p class="category text-primary">Nível Básico</p>
+                                <p class="description">Diárias:</p>
+                                <p class="description" style="text-decoration: line-through;">De: R$ 80,00</p>
+                                <p class="description">Por: R$ 50,00</p>
                             </div>
                         </div>
-                        <div class="footer text-center">
-                            <a href="#godinez" class="btn btn-primary btn-round btn-lg btn-block"><i class="fa fa-handshake-o"></i> Finalizar compra</a>
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <img src="assets/img/miniquarto5.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                <h4 class="title">Quarto Família</h4>
+                                <p class="category text-primary">Nível Intermediário</p>
+                                <p class="description">Diárias:</p>
+                                <p class="description" style="text-decoration: line-through;">De: R$ 230,00</p>
+                                <p class="description">Por: R$ 190,00</p>
+                            </div>
                         </div>
-                    </form>
+                        <div class="col-md-4">
+                            <div class="team-player">
+                                <img src="assets/img/miniquarto7.jpg" alt="Thumbnail Image" class="rounded-circle img-fluid img-raised">
+                                <h4 class="title">Quarto Família</h4>
+                                <p class="category text-primary">Nível Luxuoso</p>
+                                <p class="description">Diárias:</p>
+                                <p class="description" style="text-decoration: line-through;">De: R$ 890,00</p>
+                                <p class="description">Por: R$ 790,00</p>
+                            </div>
+                        </div>
+                        <div class="col-md-8 ml-auto mr-auto text-center">
+                            <h4 class="title">Não perca tempo, faça agora uma reserva!</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 ml-auto mr-auto text-center">
+                    <h2 class="title" id="cancelar">Cancelamento de Reservas</h2>
+                    <a href="#button" class="btn btn-primary btn-round btn-lg"><i class="now-ui-icons ui-1_simple-remove" aria-hidden="true"></i> Cancelar Reserva</a>
+                </div>
+            </div>
+          </div>
+        <div class="section section-contact-us text-center">
+            <div class="container">
+                <h2 class="title">Está com alguma dúvida?</h2>
+                <p class="description">Sua satisfação é extremamente importante para nós.</p>
+                <div class="row">
+                    <div class="col-lg-6 text-center col-md-8 ml-auto mr-auto">
+                        <div class="input-group input-lg">
+                            <span class="input-group-addon">
+                                <i class="fa fa-pencil" aria-hidden="true"></i>
+                            </span>
+                            <textarea class="form-control" name="name" rows="4" cols="80" placeholder="Escreva sua mensagem..."></textarea>
+                        </div>
+                        <div class="send-button">
+                            <a href="#pablo" class="btn btn-primary btn-round btn-block btn-lg"><i class="now-ui-icons ui-1_send"></i> Enviar</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

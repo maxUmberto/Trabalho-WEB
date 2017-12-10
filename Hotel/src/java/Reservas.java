@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import Util.Config;
 import Models.Reserva;
 import Models.Usuario;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -20,18 +22,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
+import org.hibernate.transform.Transformers;
 
 /**
  *
  * @author israel
  */
-@WebServlet(urlPatterns = {"/Reservar"})
-public class Reservar extends HttpServlet {
+@WebServlet(urlPatterns = {"/Reservas"})
+public class Reservas extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         Calendar checkin = Calendar.getInstance();
         Calendar checkout = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("y-M-d", Locale.ENGLISH);
@@ -49,7 +53,7 @@ public class Reservar extends HttpServlet {
         int tipo = Integer.parseInt(request.getParameter("tipo"));
         Usuario user = (Usuario)request.getSession().getAttribute("user");
         
-        Reserva reserva = new Reserva(checkin, checkout, tipo, user.getId().intValue());
+        Reserva reserva = new Reserva(checkin.getTime(), checkout.getTime(), tipo, user.getId().intValue());
         Config config = Config.getInstance();
         Session session = config.getSession();
         Transaction tx = session.beginTransaction();

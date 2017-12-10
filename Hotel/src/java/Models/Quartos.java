@@ -10,13 +10,21 @@ package Models;
  * @author israel
  */
 public enum Quartos {
-    Basico(1),
-    Intermediario(2),
-    Luxo(3);
+    Basico(1, "Basico"),
+    Intermediario(2, "Intermediario"),
+    Luxo(3, "Luxuoso");
+    
     private final int id;
-    Quartos(int id) {
+    private final String nome;
+    Quartos(int id, String nome) {
         this.id = id;
+        this.nome = nome;
     }
+    
+    public String getNome() {
+        return this.nome;
+    }
+    
     public int getId() {
         return this.id;
     }

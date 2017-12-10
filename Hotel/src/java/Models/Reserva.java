@@ -6,6 +6,7 @@
 package Models;
 
 import java.io.Serializable;
+import java.math.BigInteger;
 import java.util.Calendar;
 import java.util.Date;
 import javax.persistence.Basic;
@@ -27,9 +28,11 @@ public class Reserva implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private BigInteger id;
+    
+    public Reserva() {}
 
-    public Reserva(Calendar checkin, Calendar checkout, int tipo, int user) {
+    public Reserva(Date checkin, Date checkout, int tipo, int user) {
         this.checkin = checkin;
         this.checkout = checkout;
         this.tipo = tipo;
@@ -37,19 +40,19 @@ public class Reserva implements Serializable {
     
     }
 
-    public Calendar getCheckin() {
+    public Date getCheckin() {
         return checkin;
     }
 
-    public void setCheckin(Calendar checkin) {
+    public void setCheckin(Date checkin) {
         this.checkin = checkin;
     }
 
-    public Calendar getCheckout() {
+    public Date getCheckout() {
         return checkout;
     }
 
-    public void setCheckout(Calendar checkout) {
+    public void setCheckout(Date checkout) {
         this.checkout = checkout;
     }
 
@@ -69,22 +72,18 @@ public class Reserva implements Serializable {
         this.tipo = tipo;
     }
     
-    @Basic
-    @Temporal(TemporalType.DATE)
-    private Calendar checkin;
-    @Basic
-    @Temporal(TemporalType.DATE)
-    private Calendar checkout;
+    private Date checkin;
+    private Date checkout;
     
     private int user;
     private int tipo;
     
 
-    public Long getId() {
+    public BigInteger getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(BigInteger id) {
         this.id = id;
     }
 

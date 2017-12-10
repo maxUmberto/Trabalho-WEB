@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 
+import Util.Config;
 import Models.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;

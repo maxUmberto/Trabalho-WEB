@@ -4,39 +4,37 @@
  * and open the template in the editor.
  */
 
+import Models.Reserva;
 import Util.Config;
-import Models.Usuario;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-import org.hibernate.transform.Transformers;
 
-@WebServlet(urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+/**
+ *
+ * @author israel
+ */
+@WebServlet(urlPatterns = {"/CancelarReserva"})
+public class CancelarReserva extends HttpServlet {
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("email");
-        String senha = request.getParameter("password");
         Config config = Config.getInstance();
+        Reserva r;        
         Session session = config.getSession();
         Transaction tx = session.beginTransaction();
-        SQLQuery query = session.createSQLQuery("SELECT * FROM Usuario "
-                + "WHERE email='"+email+"' AND senha='"+senha+"'");
-        query.setResultTransformer(Transformers.aliasToBean(Usuario.class));
-        Usuario user = (Usuario) query.uniqueResult();
+        r = (Reserva) session.load(Reserva.class, new BigInteger(request.getParameter("id")));
+
+        session.delete(r);
         tx.commit();
-        
-        if(user != null) {
-            request.getSession().setAttribute("user", user);
-        }
         response.sendRedirect("index.jsp");
     }
 }

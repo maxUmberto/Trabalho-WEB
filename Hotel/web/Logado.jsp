@@ -47,7 +47,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#cancelar" onclick="scrollToLogin()">
+                <a class="nav-link" href="Reservados.jsp" onclick="scrollToLogin()">
                   <i class="now-ui-icons ui-1_simple-remove" aria-hidden="true"></i>
                   <p>Cancelar Reserva</p>
                 </a>
@@ -169,7 +169,7 @@
             <div class="row">
                 <div class="col-md-8 ml-auto mr-auto text-center">
                     <h2 class="title" id="cancelar">Cancelamento de Reservas</h2>
-                    <a href="#button" class="btn btn-primary btn-round btn-lg"><i class="now-ui-icons ui-1_simple-remove" aria-hidden="true"></i> Cancelar Reserva</a>
+                    <a href="Reservados.jsp" class="btn btn-primary btn-round btn-lg"><i class="now-ui-icons ui-1_simple-remove" aria-hidden="true"></i> Cancelar Reserva</a>
                 </div>
             </div>
           </div>

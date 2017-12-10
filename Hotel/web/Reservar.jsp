@@ -18,7 +18,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <form action="Reservar" method="POST">
+        <form action="Reservas" method="POST">
             <input type="date" name="checkin" placeholder="Checkin"><br>
             <input type="date" name="checkout" placeholder="Checkout"><br>
             <select name="tipo">

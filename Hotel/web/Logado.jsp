@@ -29,7 +29,7 @@
   <nav class="navbar navbar-expand-lg bg-primary fixed-top navbar-transparent " color-on-scroll="400">
       <div class="container">
           <div class="navbar-translate">
-              <a class="navbar-brand" href="perfil.html" rel="tooltip" title="Hotel Mira-Sol" data-placement="bottom">
+              <a class="navbar-brand" href="#topView" rel="tooltip" title="Hotel Mira-Sol" data-placement="bottom">
                 <img src="assets/img/sol.png" class="logonav"> Hotel Mira-Sol
               </a>
               <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -41,7 +41,7 @@
           <div class="collapse navbar-collapse justify-content-end" id="navigation" data-nav-image="./assets/img/blurred-image-1.jpg">
             <ul class="navbar-nav">
               <li class="nav-item">
-                <a class="nav-link" href="" onclick="scrollToLogin()">
+                <a class="nav-link" href="Reservar.jsp" onclick="scrollToLogin()">
                   <i class="now-ui-icons ui-1_check" aria-hidden="true"></i>
                   <p>Realizar Reserva</p>
                 </a>
@@ -65,7 +65,7 @@
   <!-- End Navbar -->
     <div class="page-header" filter-color="orange">
         <div class="page-header-image" style="background-image:url(assets/img/curtir1.jpg)"></div>
-        <div class="container">
+        <div class="container" id="topView">
             <div class="col-md-4 content-center">
               <div class="text-left"><h2 class="title">Olá, <%=user.getNome()%>!</h2>
               <h5>Bem vindo a sua página pessoal em nosso site.</h5>
